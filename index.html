@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="Styles/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <title>Pokedex LaunchX</title>
+</head>
+<body>
+    <h1>Podekedex</h1>
+    <div class="search-container">
+
+    </div>
+    <div class="pokedex-body">
+        <div class="pokedex__screen">
+            <div class="pokedex__screenContent hide" id="pokedex__screenContent">
+                <div class="pokename-container">
+                    <span class="pokemon-name" id="pokemonName">Pokemón</span> <span class="poke-number" id="pokeId"></span>
+                </div>
+                <div class="pokemon__images" id="poke-background">
+                    <div class="pokemon-front">
+                        <img src="styles/guess__pokemon2.png" alt="Pokemon Image" class="pokemon__image" id="pokeImg">
+                    </div>
+                    <div class="pokemon-back" id="pokemon-imgback">
+                        <img class="pokemon__image" src="styles/whosepokemon.png" alt="Que pokemon es" id="pokeImgBack">
+                    </div>
+                </div>
+                <div class="poke-details">
+                    <p class="poke-type" id="pokeType1"></p>
+                    <p class="poke-type" id="pokeType2"></p>
+                    <p class="poke-details__atribute">
+                        Weight:  <span class="poke-detail" id="pokeWeight"></span>
+                    </p>
+                    <p class="poke-details__atribute">
+                    Height: <span class="poke-detail" id="pokeHeight"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="search__container">
+            <input type="text" placeholder="_" id="pokeName" name="pokeName" class="pokename"> 
+            <button onclick="fetchPokemon()">Buscar</button>
+        </div>
+    </div>
+    <div></div>
+    <script src="js/pokedexapp.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+h1{
+    font-size: 40px;
+}
+
+/* Pokdex Styles */
+
+.pokedex-body{
+  width: 460px;
+  height: 550px;
+  background-color: #F73027;
+  padding: 20px;
+}
+
+.pokedex__screen{
+  background-color: #282C34;
+  padding: 20px;
+  width: 420px;
+  height: 480px;
+  margin: 0 auto;
+}
+
+.pokedex__screenContent{
+  height: 100%;
+}
+
+.search__container{
+  padding: 0px 5px;
+  margin-top: 10px;
+  width: 420px;
+}
+
+.pokename{
+  background-color: #00BF1A;
+  height: 25px;
+  color: yellow;
+  font-family: 'Share Tech Mono', monospace;
+  font-size:16px;
+  text-transform: uppercase;
+}
+
+.pokename::placeholder{
+  color: yellow;
+  font-family: 'Share Tech Mono', monospace;
+  font-size:16px;
+}
+
+
+#pokeName{
+    width: 200px;
+}
+
+
+
+.hide{
+    display: none;
+}
+
+.pokemon__images{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.search-container{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    align-items: center;
+}
+
+.pokemon__image{
+    width: 200px;
+    margin-top: 20px;
+}
+
+
+.pokedex__screenContent {
+    background-color: #11082b;
+}
+
+.poke-details__atribute{
+    color: white;
+    font-weight: 600;
+}
+
+
+.pokename-container{
+  padding: 10px 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pokemon-name{
+    color:white;
+    font-weight: 600;
+    font-size:30px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.poke-number{
+    color:white;
+    font-weight: 600;
+    font-size:24px;
+    line-height: 34px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.poke-type{
+  padding-left: 10px;
+  color:white;
+  font-weight: 600;
+  font-size:18px;
+  font-family: 'Share Tech Mono', monospace;
+  margin-bottom: 25px;
+}
+
+.poke-details__atribute{
+  padding-left: 10px;
+  color:white;
+  font-weight: 600;
+  font-size:16px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+
+button{
+  width: 150px;
+  height: 30px;
+  font-size: 16px;
+  background-color: #E0DEDE;
+  color: #282C34;
+  font-weight: 600;
+}
+
+  /* Estilos tipos */
+
+  .normal {
+    background: #BABAAE;
+  }
+  
+  .fighting {
+    background: #A75543;
+  }
+  
+  .flying {
+    background: #78A2FF;
+  }
+  
+  .poison {
+    background: #A95CA0;
+  }
+  
+  .ground {
+    background: #EECC55;
+  }
+  
+  .rock {
+    background: #CCBD72;
+  }
+  
+  .bug {
+    background: #C2D21E;
+  }
+  
+  .ghost {
+    background: #7975D7;
+  }
+  
+  .steel {
+    background: #C4C2DB;
+  }
+  
+  .fire {
+    background: #FA5643;
+  }
+  
+  .water {
+    background: #56ADFF;
+  }
+  
+  .grass {
+    background: #8CD750;
+  }
+  
+  .electric {
+    background: #FDE139;
+  }
+  
+  .psychic {
+    background: #FA65B4;
+  }
+  
+  .ice {
+    background: #96F1FF;
+  }
+  
+  .dragon {
+    background: #8673FF;
+  }
+  
+  .dark {
+    background: #8D6855;
+  }
+  
+  .fairy {
+    background: #F9AEFF;
+  }

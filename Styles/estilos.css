@@ -315,7 +315,7 @@ button{
     }
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 460px) {
     .wrapper{
       width: 400px;
     }

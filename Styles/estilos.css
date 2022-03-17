@@ -3,7 +3,7 @@ body{
   background-size: cover;
 }
 
-.wrappeer{
+.wrapper{
   width: 100%;
 
 }
@@ -306,5 +306,36 @@ button{
     .pokedex-container {
       flex-direction: column;
       align-items: center;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .right-container{
+      width: 100%;
+      margin: 0 auto;
+    }
+    .pokedex-container {
+      width: 90%;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 10px;
+    }
+
+    .pokemon__list{
+      width: 95%;
+    }
+    .pokemon__image{
+      width: 170px;
+    }
+    .pokedex-body{
+      width: 95%;
+      justify-content: center;
+      margin: 10px 10px 0px 10px;
+    }
+    .pokedex__screen{
+      width: 95%;
+    }
+    .pokedex__screenContent{
+      width: 97%;
     }
   }

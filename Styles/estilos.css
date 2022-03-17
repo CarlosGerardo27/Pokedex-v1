@@ -4,9 +4,13 @@ h1{
 
 /* Pokdex Styles */
 
+.pokedex-container{
+  display: flex;
+}
+
 .pokedex-body{
   width: 460px;
-  height: 550px;
+  height: 600px;
   background-color: #F73027;
   padding: 20px;
 }
@@ -129,7 +133,59 @@ button{
   background-color: #E0DEDE;
   color: #282C34;
   font-weight: 600;
+  border: 2px solid black;
+  cursor: pointer;
 }
+
+/* Contenedor listado Pokemon */
+
+
+.right-container{
+  background-color: #F73027;
+  padding: 20px;
+  height: 550px;
+  border: 2px solid black;
+}
+
+.pokemon__list{
+  padding: 10px;
+  width: 400px;
+  height: 450px;
+  display: flex;
+  background-color: #56ADFF;
+  color: white;
+  justify-content: space-around;
+
+}
+
+.pokelist-rigth{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.pokelist-left{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.buttons__container{
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pokemon__list-item{
+  cursor: pointer;
+  padding: 0px 5px;
+}
+
+.pokemon__list-item:hover{
+  transform: scale(1.1);
+  background-color: #96F1FF;
+}
+
 
   /* Estilos tipos */
 

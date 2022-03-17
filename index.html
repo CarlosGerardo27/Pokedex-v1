@@ -12,41 +12,74 @@
 </head>
 <body>
     <h1>Podekedex</h1>
-    <div class="search-container">
-
-    </div>
-    <div class="pokedex-body">
-        <div class="pokedex__screen">
-            <div class="pokedex__screenContent hide" id="pokedex__screenContent">
-                <div class="pokename-container">
-                    <span class="pokemon-name" id="pokemonName">Pokemón</span> <span class="poke-number" id="pokeId"></span>
-                </div>
-                <div class="pokemon__images" id="poke-background">
-                    <div class="pokemon-front">
-                        <img src="styles/guess__pokemon2.png" alt="Pokemon Image" class="pokemon__image" id="pokeImg">
+    <div class="pokedex-container">
+        <div class="pokedex__left">
+            <div class="pokedex-body">
+                <div class="pokedex__screen">
+                    <div class="pokedex__screenContent hide" id="pokedex__screenContent">
+                        <div class="pokename-container">
+                            <span class="pokemon-name" id="pokemonName">Pokemón</span> <span class="poke-number" id="pokeId"></span>
+                        </div>
+                        <div class="pokemon__images" id="poke-background">
+                            <div class="pokemon-front">
+                                <img src="styles/guess__pokemon2.png" alt="Pokemon Image" class="pokemon__image" id="pokeImg">
+                            </div>
+                            <div class="pokemon-back" id="pokemon-imgback">
+                                <img class="pokemon__image" src="styles/whosepokemon.png" alt="Que pokemon es" id="pokeImgBack">
+                            </div>
+                        </div>
+                        <div class="poke-details">
+                            <p class="poke-type" id="pokeType1"></p>
+                            <p class="poke-type" id="pokeType2"></p>
+                            <p class="poke-details__atribute">
+                                Weight:  <span class="poke-detail" id="pokeWeight"></span>
+                            </p>
+                            <p class="poke-details__atribute">
+                            Height: <span class="poke-detail" id="pokeHeight"></span>
+                            </p>
+                        </div>
                     </div>
-                    <div class="pokemon-back" id="pokemon-imgback">
-                        <img class="pokemon__image" src="styles/whosepokemon.png" alt="Que pokemon es" id="pokeImgBack">
-                    </div>
                 </div>
-                <div class="poke-details">
-                    <p class="poke-type" id="pokeType1"></p>
-                    <p class="poke-type" id="pokeType2"></p>
-                    <p class="poke-details__atribute">
-                        Weight:  <span class="poke-detail" id="pokeWeight"></span>
-                    </p>
-                    <p class="poke-details__atribute">
-                    Height: <span class="poke-detail" id="pokeHeight"></span>
-                    </p>
+                <div class="search__container">
+                    <input type="text" placeholder="_" id="pokeName" name="pokeName" class="pokename"> 
+                    <button id="buscarPokemon">Buscar</button>
                 </div>
             </div>
         </div>
-        <div class="search__container">
-            <input type="text" placeholder="_" id="pokeName" name="pokeName" class="pokename"> 
-            <button onclick="fetchPokemon()">Buscar</button>
+        <div class="right-container">
+            <div class="pokemon__list">                
+                <div class="pokelist-rigth">
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                </div>
+                <div class="pokelist-left">                    
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                    <div class="pokemon__list-item"></div>
+                </div>
+
+            </div>
+            <dib class="buttons__container">
+                <button class="control" id="prev">Prev</button>
+                <button class="control" id="next">Next</button>
+            </dib>
         </div>
     </div>
-    <div></div>
     <script src="js/pokedexapp.js"></script>
 </body>
 </html>

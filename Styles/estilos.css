@@ -1,3 +1,5 @@
+
+
 body{
   background-image: url('forest.jpg');
   background-size: cover;
@@ -5,6 +7,7 @@ body{
 
 .wrapper{
   width: 100%;
+  align-content: center;
 
 }
 
@@ -25,11 +28,12 @@ h1{
 .pokedex-container{
   display: flex;
   justify-content: center;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 
 .pokedex-body{
+  margin: 0 auto;
   width: 460px;
   height: 680px;
   background-color: #F73027;
@@ -306,36 +310,32 @@ button{
     .pokedex-container {
       flex-direction: column;
       align-items: center;
+      justify-content: center;
     }
   }
 
   @media (max-width: 400px) {
-    .right-container{
-      width: 100%;
-      margin: 0 auto;
+    .wrapper{
+      width: 400px;
     }
     .pokedex-container {
-      width: 90%;
       flex-direction: column;
       align-items: center;
-      margin: 10px 10px;
-    }
-
-    .pokemon__list{
-      width: 95%;
-    }
-    .pokemon__image{
-      width: 170px;
+      justify-content: center;
     }
     .pokedex-body{
-      width: 95%;
-      justify-content: center;
-      margin: 10px 10px 0px 10px;
+      width: 380px;
     }
     .pokedex__screen{
-      width: 95%;
+      width: 340px;
     }
-    .pokedex__screenContent{
-      width: 97%;
+    .pokemon__images{
+      width: 340px;
+      display: flex;
+      justify-content: center;
+    }
+    .pokemon__list{
+      width: 340px;
     }
   }
+

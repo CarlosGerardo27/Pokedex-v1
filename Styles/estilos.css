@@ -1,11 +1,31 @@
+body{
+  background-image: url('forest.jpg');
+}
+
+.wrappeer{
+  width: 100%;
+
+}
+
+
 h1{
+    margin: 10px;
     font-size: 40px;
+    padding: 20px;
+    color: white;
+    background-color: #11082b;
+    opacity: .7;
+    border-radius: 11px;
+    text-align: center;
 }
 
 /* Pokdex Styles */
 
 .pokedex-container{
   display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .pokedex-body{

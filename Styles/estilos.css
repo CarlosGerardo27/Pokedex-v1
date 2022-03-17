@@ -1,5 +1,6 @@
 body{
   background-image: url('forest.jpg');
+  background-size: cover;
 }
 
 .wrappeer{

@@ -12,6 +12,8 @@ const pokeListItems = document.querySelectorAll(".pokemon__list-item");
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 const abilityContainer = document.querySelectorAll('.ability');
+const pokeImgBack = document.getElementById('pokeImgBack');
+const pokeImgBackContainer = document.getElementById('pokemon-imgback');
 
 
 
@@ -31,6 +33,9 @@ const resetScreen = () =>{
     }
 }
 
+const monstrarImg = () => {
+    pokeImgBackContainer.classList.remove('hide')
+}
 
 const pokeImage = (url)=>{
     const pokeImg = document.getElementById('pokeImg');
@@ -38,7 +43,6 @@ const pokeImage = (url)=>{
 }
 
 const pokeImageBack = (url)=>{
-    const pokeImgBack = document.getElementById('pokeImgBack');
     pokeImgBack.src = url;
 }
 
@@ -112,17 +116,25 @@ function fetchPokemon() {
     fetch(url).then((resApi) => {
         if (resApi.status != 200) {
             pokeImage("https://c.tenor.com/Ih8bQ8iIlDUAAAAC/pikachu-sad.gif");
+            resetScreen();
+            pokemonName.textContent = `No se encontro al pokemon`;
+            pokeId.textContent = '0000';
+            pokeType1.textContent = "Not found";
+            pokeType2.textContent = "Not found";
+            pokeWeight.textContent = "No data";
+            pokeHeight.textContent = "No data";
+            pokeImgBackContainer.classList.add('hide')
         } else {
             return resApi.json();
         }
     }).then((data) => {
 
         resetScreen();
-
         let pokeImg = data.sprites.front_default;
         pokeImage(pokeImg);
         let pokeImgBack = data.sprites.back_default;
         pokeImageBack(pokeImgBack);
+        monstrarImg()
         pokemonName.textContent = capitalize(data['name']);
         pokeId.textContent = `# ${data['id'].toString().padStart(4, 0)}`;
         pokeWeight.textContent = data['weight'];
@@ -152,7 +164,6 @@ function fetchPokemon() {
 
         for(let i = 0; i < pokeAbilities.length; i++){
             const pokeAbility = pokeAbilities[i]['ability']['name'];
-            console.log(pokeAbility)
             if(pokeAbility){
                 abilityContainer[i].textContent = capitalize(pokeAbility);
             }else{

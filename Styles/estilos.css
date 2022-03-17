@@ -223,6 +223,7 @@ button{
 .pokemon__list-item{
   cursor: pointer;
   padding: 0px 5px;
+  font-size: 16px;
 }
 
 .pokemon__list-item:hover{

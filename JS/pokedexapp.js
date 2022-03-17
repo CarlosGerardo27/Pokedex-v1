@@ -64,7 +64,7 @@ const fetchPokeList = (rangeURL) =>{
             const resultsData = results[i];
             pokeListItem.addEventListener('click', ()=>{
                 const pokeSelector = pokeListItem.innerHTML;
-                const pokeSelected = pokeSelector.split('-')
+                const pokeSelected = pokeSelector.split('.-')
                 pokeName.value = pokeSelected[1];
                 buscarPokemon.click()
             })
@@ -89,9 +89,11 @@ const fetchPokeList = (rangeURL) =>{
 
 
 
-/* const prev20 = (){
-
-} */
+const prev20 = () =>{
+    if(prevUrl){
+        fetchPokeList(prevUrl)
+    }
+}
 
 const next20 = () =>{
     if(nextUrl){
@@ -148,7 +150,7 @@ function fetchPokemon() {
 
     /* Eventlisteners */
 
-/* prev.addEventListener('click', prev20); */
+prev.addEventListener('click', prev20);
 next.addEventListener('click', next20);
 
 buscarPokemon.addEventListener('click', fetchPokemon)

@@ -11,6 +11,7 @@ const pokeBackground = document.getElementById('poke-background');
 const pokeListItems = document.querySelectorAll(".pokemon__list-item");
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
+const abilityContainer = document.querySelectorAll('.ability');
 
 
 
@@ -127,6 +128,7 @@ function fetchPokemon() {
         pokeWeight.textContent = data['weight'];
         pokeHeight.textContent = data['height'];
 
+        /* Obtenciuón de tipos */
         const dataTypes = data['types'];
         const dataFirstType = dataTypes[0];
         const dataSecondType = dataTypes[1];
@@ -143,6 +145,23 @@ function fetchPokemon() {
         const pokeBg = dataFirstType['type']['name'];
         pokeBackground.classList.add(pokeBg);
         pokedexScreen.classList.remove("hide");
+
+        /* Habilidades */
+        const pokeAbilities = data['abilities']
+        console.log(pokeAbilities)
+
+        for(let i = 0; i < pokeAbilities.length; i++){
+            const pokeAbility = pokeAbilities[i]['ability']['name'];
+            console.log(pokeAbility)
+            if(pokeAbility){
+                abilityContainer[i].textContent = capitalize(pokeAbility);
+            }else{
+                abilityContainer[i].textContent = "";
+            }
+
+        }
+
+
     });
 }
 

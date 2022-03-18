@@ -33,10 +33,10 @@
                             <div class="poke-details-container">
                                 <div class="poke-details-left">
                                     <div class="poke-details">
-                                        <p class="detail__title">Tipos</p>
+                                        <p class="detail__title">Type</p>
                                         <p class="poke-type" id="pokeType1"></p>
                                         <p class="poke-type" id="pokeType2"></p>
-                                        <p class="detail__title">Detalles</p>
+                                        <p class="detail__title">Details</p>
                                         <p class="poke-details__atribute">
                                             Weight:  <span class="poke-detail" id="pokeWeight"></span>
                                         </p>
@@ -47,8 +47,6 @@
                                 </div>
                                 <div class="poke-details-right">
                                     <p class="detail__title">Abilities</p>
-                                    <p class="ability"></p>
-                                    <p class="ability"></p>
                                     <p class="ability"></p>
                                     <p class="ability"></p>
                                     <p class="ability"></p>
@@ -64,6 +62,41 @@
                 </div>
             </div>
             <div class="right-container">
+                <div class="stats__container">
+                    <div class="stats__screen hide" id="stats__screen">
+                        <p class="stats__title">Stats</p>
+                        <div class="stats__columns">
+                            <div class="stats__right">
+                                <p class="stats__item-container">
+                                    HP:
+                                    <span class="stats__item"></span>
+                                </p>
+                                <p class="stats__item-container">
+                                    Attack:
+                                    <span class="stats__item"></span>
+                                </p>
+                                <p class="stats__item-container">
+                                    Defense:
+                                    <span class="stats__item"></span>
+                                </p>
+                            </div>
+                            <div class="stats__left">
+                                <p class="stats__item-container">
+                                    Special Attack:
+                                    <span class="stats__item"></span>
+                                </p>
+                                <p class="stats__item-container">
+                                    Special Defense:
+                                    <span class="stats__item"></span>
+                                </p>
+                                <p class="stats__item-container">
+                                    Speed:
+                                    <span class="stats__item"></span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="pokemon__list">                
                     <div class="pokelist-rigth">
                         <div class="pokemon__list-item"></div>
@@ -115,6 +148,8 @@ const next = document.getElementById("next");
 const abilityContainer = document.querySelectorAll('.ability');
 const pokeImgBack = document.getElementById('pokeImgBack');
 const pokeImgBackContainer = document.getElementById('pokemon-imgback');
+const statsScreen = document.getElementById('stats__screen');
+const statItems = document.querySelectorAll('.stats__item')
 
 
 
@@ -135,8 +170,9 @@ const resetScreen = () =>{
 }
 
 const monstrarImg = () => {
-    pokeImgBackContainer.classList.remove('hide')
+    pokeImgBackContainer.classList.remove('hide');
 }
+
 
 const pokeImage = (url)=>{
     const pokeImg = document.getElementById('pokeImg');
@@ -224,7 +260,8 @@ function fetchPokemon() {
             pokeType2.textContent = "Not found";
             pokeWeight.textContent = "No data";
             pokeHeight.textContent = "No data";
-            pokeImgBackContainer.classList.add('hide')
+            pokeImgBackContainer.classList.add('hide');
+            statsScreen.classList.add("hide");
         } else {
             return resApi.json();
         }
@@ -235,7 +272,8 @@ function fetchPokemon() {
         pokeImage(pokeImg);
         let pokeImgBack = data.sprites.back_default;
         pokeImageBack(pokeImgBack);
-        monstrarImg()
+        monstrarImg();
+        statsScreen.classList.remove("hide");
         pokemonName.textContent = capitalize(data['name']);
         pokeId.textContent = `# ${data['id'].toString().padStart(4, 0)}`;
         pokeWeight.textContent = data['weight'];
@@ -261,7 +299,6 @@ function fetchPokemon() {
 
         /* Habilidades */
         const pokeAbilities = data['abilities']
-        console.log(pokeAbilities)
 
         for(let i = 0; i < pokeAbilities.length; i++){
             const pokeAbility = pokeAbilities[i]['ability']['name'];
@@ -271,6 +308,15 @@ function fetchPokemon() {
                 abilityContainer[i].textContent = "";
             }
 
+        }
+
+        /* Estadisticas */
+        const pokeStats = data['stats']
+        console.log(pokeStats)
+
+         for(let i = 0; i < pokeStats.length; i++){
+            const pokeStat = pokeStats[i]['base_stat'];
+            statItems[i].textContent = pokeStat;
         }
 
 

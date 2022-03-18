@@ -14,6 +14,8 @@ const next = document.getElementById("next");
 const abilityContainer = document.querySelectorAll('.ability');
 const pokeImgBack = document.getElementById('pokeImgBack');
 const pokeImgBackContainer = document.getElementById('pokemon-imgback');
+const statsScreen = document.getElementById('stats__screen');
+const statItems = document.querySelectorAll('.stats__item')
 
 
 
@@ -34,8 +36,9 @@ const resetScreen = () =>{
 }
 
 const monstrarImg = () => {
-    pokeImgBackContainer.classList.remove('hide')
+    pokeImgBackContainer.classList.remove('hide');
 }
+
 
 const pokeImage = (url)=>{
     const pokeImg = document.getElementById('pokeImg');
@@ -123,7 +126,8 @@ function fetchPokemon() {
             pokeType2.textContent = "Not found";
             pokeWeight.textContent = "No data";
             pokeHeight.textContent = "No data";
-            pokeImgBackContainer.classList.add('hide')
+            pokeImgBackContainer.classList.add('hide');
+            statsScreen.classList.add("hide");
         } else {
             return resApi.json();
         }
@@ -134,7 +138,8 @@ function fetchPokemon() {
         pokeImage(pokeImg);
         let pokeImgBack = data.sprites.back_default;
         pokeImageBack(pokeImgBack);
-        monstrarImg()
+        monstrarImg();
+        statsScreen.classList.remove("hide");
         pokemonName.textContent = capitalize(data['name']);
         pokeId.textContent = `# ${data['id'].toString().padStart(4, 0)}`;
         pokeWeight.textContent = data['weight'];
@@ -160,7 +165,6 @@ function fetchPokemon() {
 
         /* Habilidades */
         const pokeAbilities = data['abilities']
-        console.log(pokeAbilities)
 
         for(let i = 0; i < pokeAbilities.length; i++){
             const pokeAbility = pokeAbilities[i]['ability']['name'];
@@ -170,6 +174,15 @@ function fetchPokemon() {
                 abilityContainer[i].textContent = "";
             }
 
+        }
+
+        /* Estadisticas */
+        const pokeStats = data['stats']
+        console.log(pokeStats)
+
+            for(let i = 0; i < pokeStats.length; i++){
+            const pokeStat = pokeStats[i]['base_stat'];
+            statItems[i].textContent = pokeStat;
         }
 
 

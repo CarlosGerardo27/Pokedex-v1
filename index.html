@@ -64,7 +64,7 @@
             <div class="right-container">
                 <div class="stats__container">
                     <div class="stats__screen hide" id="stats__screen">
-                        <p class="stats__title">Stats</p>
+                        <p class="stats__title">Stats <span id="Stats__pokeName"></span></p>
                         <div class="stats__columns">
                             <div class="stats__right">
                                 <p class="stats__item-container">
@@ -149,7 +149,8 @@ const abilityContainer = document.querySelectorAll('.ability');
 const pokeImgBack = document.getElementById('pokeImgBack');
 const pokeImgBackContainer = document.getElementById('pokemon-imgback');
 const statsScreen = document.getElementById('stats__screen');
-const statItems = document.querySelectorAll('.stats__item')
+const statItems = document.querySelectorAll('.stats__item');
+const statsPokeName = document.getElementById('Stats__pokeName')
 
 
 
@@ -275,6 +276,7 @@ function fetchPokemon() {
         monstrarImg();
         statsScreen.classList.remove("hide");
         pokemonName.textContent = capitalize(data['name']);
+        statsPokeName.textContent = capitalize(data['name']);
         pokeId.textContent = `# ${data['id'].toString().padStart(4, 0)}`;
         pokeWeight.textContent = data['weight'];
         pokeHeight.textContent = data['height'];
